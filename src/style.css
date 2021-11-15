@@ -1,0 +1,225 @@
+@font-face {
+  src: url('./fonts/NotoSans-Regular.ttf');
+  font-family: "NotoSans Regular";
+}
+
+@supports (display: grid) {
+
+    body{ font-family: "NotoSans Regular", sans-serif;}
+    
+    .grid {
+      display: grid;
+      grid-gap: 0vw;
+      min-height: 10vh;
+      padding: 0vw;
+    }
+  
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 28vh 35vh minmax(70vh, 1fr) 18vh 38vh 22vh 15vh;
+      grid-template-areas:
+        "name short_info"
+        "about about"
+        "expirience expirience"
+        "education education"
+        "courses courses"
+        "language language"
+        "contacts contacts";
+    }
+    .gradient{ background: linear-gradient(to bottom, rgb(4, 191, 166), white);}
+  
+    @media screen and (min-width: 750px) {
+      .grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, minmax(20vh, 1fr));
+        grid-template-areas:
+          "name about about about"
+          "short_info expirience expirience expirience"
+          "contacts   expirience expirience expirience"
+          "contacts education education education"
+          "contacts courses courses courses"
+          "contacts language language language";
+      }
+      .gradient{ background: linear-gradient(to right, rgba(4, 191, 166, 0.603), white);}
+    }
+  
+    @media screen and (min-width: 1400px) {
+      .grid {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas:
+        "name about about about courses courses"
+        "short_info about about about courses courses"
+        "contacts expirience expirience expirience education education"
+        "contacts expirience expirience expirience language language";
+      }
+      .gradient{ background: linear-gradient(to right, rgba(4, 191, 166, 0.61), white);}
+      .courses, .language, .education {
+        background-color: rgba(176, 180, 180, 0.507);
+        border-left: 3px solid darkgray;
+      }
+    }
+  
+    .grid .about  { grid-area: about; }
+    .grid .expirience  { grid-area: expirience; }
+    .grid .courses  { grid-area: courses; }
+    .grid .education  { grid-area: education; }
+    .grid .contacts  { grid-area: contacts; }
+    .grid .language  { grid-area: language; }
+    .grid .name  { grid-area: name; }
+    .grid .short_info  { grid-area: short_info; }
+    
+    .centered {
+      display: flex;
+      align-content: center;
+      align-items: center;
+    }
+    .name { 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1vh 2vh;
+    }
+    .contacts { padding: 1vh 2vh; }
+    .short_info { padding: 1vh 2vh; }
+    .expirience {padding: 1.5vw;}
+    .about {padding: 1.5vw;}
+    .about p {
+      padding: 1vh 2vh;
+      text-align: justify;
+      line-height: 1.5em;
+    }
+    .education {padding: 1.5vw;}
+    .education p {
+      padding: 1vh 2vh;
+    }
+    .progress-bar {
+      display: flex;
+      width: 100%;
+      height: 2vh;
+    }
+    .progress-bar__skills {
+      text-align: right;
+      padding-top: 0.5vh;
+      padding-bottom: 0.5vh;
+      color: white;
+    }
+    .sf {
+        width: 74%;
+        background-color: #bcf84d;
+        height: 1vh;
+        }
+    .completed {
+        width: 100%; 
+        background-color: #04AA6D;
+        height: 1vh;
+        }
+
+
+    .language {padding: 1.5vw;}
+    .courses {padding: 1.5vw;}
+
+    .single-row {
+      display: flex;
+      align-items: center;
+    }
+
+    .single-row img {
+      padding-left: 10px;
+      padding-right: 20px;
+    }
+
+    /* The actual timeline (the vertical ruler) */
+    .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* The actual timeline (the vertical ruler) */
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: rgb(85, 21, 21);
+      top: 0;
+      bottom: 0;
+      left: 20%;
+      margin-left: -3px;
+    }
+
+    /* Container around content */
+    .container {
+      padding: 10px 40px;
+      position: relative;
+    }
+
+    /* The circles on the timeline */
+    .container::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      right: -17px;
+      background-color: rgb(216, 216, 216);
+      border: 4px solid #7adbe2;
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    /* Add arrows to the left container (pointing right) */
+    .left::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      right: 30px;
+      border: medium solid white;
+      border-width: 10px 0 10px 10px;
+      border-color: transparent transparent transparent white;
+    }
+
+    /* Add arrows to the right container (pointing left) */
+    .right::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      left: 30px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+
+    /* Fix the circle for containers on the right side */
+    .right::after {
+      left: -16px;
+    }
+
+    /* The actual content */
+    .content {
+      width: 100%;
+      padding: 20px 30px;
+      background-color: rgb(4, 191, 166, 0.5);
+      position: relative;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .active, .content:hover {
+      background-color: #ccc;
+    }
+
+    .content__text {
+      padding: 0 18px;
+      display: none;
+      overflow: hidden;
+      background-color: #f1f1f1;
+      border-radius: 6px;
+    }
+  }
