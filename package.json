@@ -1,7 +1,9 @@
 {
     "scripts": {
         "build": "webpack --config config/webpack.config.dev.js",
-        "start.dev": "webpack serve --config config/webpack.config.dev.js"
+        "start.dev": "webpack serve --config config/webpack.config.dev.js",
+        "mockme": "json-server --watch config/db.json --port 2525"
+
     },
     "dependencies": {
         "css-loader": "^6.5.1",
