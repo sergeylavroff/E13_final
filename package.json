@@ -1,1 +1,17 @@
-{"scripts":{"build":"webpack"},"dependencies":{"css-loader":"^6.5.1","html-webpack-plugin":"^5.5.0","mini-css-extract-plugin":"^2.4.4","style-loader":"^3.3.1","webpack-dev-server":"^4.3.1"},"devDependencies":{"webpack-cli":"^4.9.1"}}
+{
+    "scripts": {
+        "build": "webpack --config config/webpack.config.dev.js",
+        "start.dev": "webpack serve --config config/webpack.config.dev.js"
+    },
+    "dependencies": {
+        "css-loader": "^6.5.1",
+        "html-webpack-plugin": "^5.5.0",
+        "json-server": "^0.17.0",
+        "mini-css-extract-plugin": "^2.4.4",
+        "style-loader": "^3.3.1",
+        "webpack-dev-server": "^4.3.1"
+    },
+    "devDependencies": {
+        "webpack-cli": "^4.9.1"
+    }
+}
