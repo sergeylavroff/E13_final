@@ -1,22 +1,23 @@
 import './style.css';
-import { submitForm } from './form4mock';
-import { createForm } from './form4mock';
+import { submitForm, createForm } from './form4mock';
 
-var coll = document.getElementsByClassName("content");
-var i;
+const coll = document.getElementsByClassName('content');
+let i;
 
 createForm();
 
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
+for (i = 0; i < coll.length; i += 1) {
+  coll[i].addEventListener('click', function toggleVisible() {
+    this.classList.toggle('active');
+    const content = this.nextElementSibling;
+    if (content.style.display === 'block') {
+      content.style.display = 'none';
     } else {
-      content.style.display = "block";
+      content.style.display = 'block';
     }
   });
-};
+}
 
-document.getElementById('submitFormButton').addEventListener("click", submitForm, false);
+document
+  .getElementById('submitFormButton')
+  .addEventListener('click', submitForm, false);
