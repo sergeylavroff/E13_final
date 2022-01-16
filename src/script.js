@@ -1,7 +1,11 @@
-import './style.css'
+import './style.css';
+import { submitForm } from './form4mock';
+import { createForm } from './form4mock';
 
 var coll = document.getElementsByClassName("content");
 var i;
+
+createForm();
 
 for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
@@ -13,4 +17,6 @@ for (i = 0; i < coll.length; i++) {
       content.style.display = "block";
     }
   });
-}
+};
+
+document.getElementById('submitFormButton').addEventListener("click", submitForm, false);

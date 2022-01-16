@@ -1,8 +1,28 @@
 {
-    "contacts": [
-        {"id":1, "name":"sergey", "email":"1@1.ru", "phone":"879845181613"},
-        {"id":2, "name":"pavel", "email":"2@1.ru", "phone":"8379845181613"},
-        {"id":3, "name":"mihail", "email":"3@1.ru", "phone":"83759845181613"},
-        {"id":4, "name":"elena", "email":"4@1.ru", "phone":"8794845181613"}
-    ]
+  "contacts": [
+    {
+      "id": 1,
+      "name": "sergey",
+      "email": "1@1.ru",
+      "phone": "879845181613"
+    },
+    {
+      "id": 2,
+      "name": "pavel",
+      "email": "2@1.ru",
+      "phone": "8379845181613"
+    },
+    {
+      "id": 3,
+      "name": "mihail",
+      "email": "3@1.ru",
+      "phone": "83759845181613"
+    },
+    {
+      "id": 4,
+      "name": "elena",
+      "email": "4@1.ru",
+      "phone": "8794845181613"
+    }
+  ]
 }

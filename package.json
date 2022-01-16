@@ -2,6 +2,7 @@
     "scripts": {
         "build": "webpack --config config/webpack.config.dev.js",
         "start.dev": "webpack serve --config config/webpack.config.dev.js",
+        "start.prod": "webpack serve --config config/webpack.config.prod.js",
         "mockme": "json-server --watch config/db.json --port 2525"
 
     },
